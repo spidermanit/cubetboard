@@ -137,7 +137,7 @@ if (!empty($_POST)) {
                                     </td>
 
                                 </tr>
-                                <tr>
+<!--                                <tr>
                                     <td id="pass_id">
                                         <label class="disp">Database Prefix</label>
                                     </td>
@@ -145,7 +145,7 @@ if (!empty($_POST)) {
                                         <input class="disp" type="text" name="db_prefix" id="dbprefix"/>
                                     </td>
 
-                                </tr>
+                                </tr>-->
                                 <tr>
                                     <td>
                                         <label class="disp">Install sample data</label>

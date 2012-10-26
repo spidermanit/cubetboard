@@ -18,20 +18,20 @@
                         <form  method="post" class="Form FancyForm" id="emailForm">
                             <ul>
                                 <li>
-                                    <label>Recipient Name</label>
-                                    <input type="text" id="name" name="name" maxlength="180" onclick="this.value='';" style="color: #000;"/>
+                                    <label></label>
+                                    <input type="text" id="name" name="name" maxlength="180" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" value="Recipient Name" style="color: #D7D7D7;"/>
                                     <span class="fff"></span>
                                     <span class="helper red"></span>
                                 </li>
                                 <li>
-                                    <label>Recipient Email</label>
-                                    <input type="text" id="email" name="email" maxlength="180" onclick="this.value='';" style="color: #000;"/>
+                                    <label></label>
+                                    <input type="text" id="email" name="email" maxlength="180" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;" value="Email" style="color: #D7D7D7;"/>
                                     <span class="fff"></span>
                                     <span class="helper red"></span>
                                 </li>
                                 <li class="optional">
-                                    <label>Message (optional)</label>
-                                    <textarea id="MessageBody"  name="MessageBody" maxlength="180" style="height:100px;"></textarea>
+                                    <label></label>
+                                    <textarea id="MessageBody"  name="MessageBody" maxlength="180" style="height:100px;color:#D7D7D7;" onfocus="if(this.value==this.defaultValue)this.value='';" onblur="if(this.value=='')this.value=this.defaultValue;">Message</textarea>
                                     <span class="fff"></span>
                                 </li>
                                 <input type="hidden" id="pinLink"  name="pinLink" value="<?php echo site_url('board/pins/'.$boardId.'/'.$pinId);?>" />
@@ -65,7 +65,7 @@ function emailFn()
 {
   name = $('#name').val();
   email = $('#email').val();
-  if((name=='')||(email==''))
+  if((name=='')||(email=='')||(email=='Email'))
   {
     $('#error').html('please provide the details');
     return false;

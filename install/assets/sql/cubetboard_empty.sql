@@ -1,5 +1,5 @@
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%accounts` (
+CREATE TABLE IF NOT EXISTS `accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(120) NOT NULL,
   `password` varchar(32) NOT NULL,
@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%accounts` (
 -- Table structure for table `activity`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%activity` (
+CREATE TABLE IF NOT EXISTS `activity` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `user_id` int(25) NOT NULL,
   `log` text COLLATE utf8_unicode_ci NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%activity` (
 -- Table structure for table `admin_users`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%admin_users` (
+CREATE TABLE IF NOT EXISTS `admin_users` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%admin_users` (
 -- Table structure for table `board`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%board` (
+CREATE TABLE IF NOT EXISTS `board` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `user_id` int(25) NOT NULL,
   `board_name` varchar(25) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%board` (
 -- Table structure for table `category`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%category` (
+CREATE TABLE IF NOT EXISTS `category` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `name` varchar(25) NOT NULL,
   `pin_id` int(25) NOT NULL,
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%category` (
 -- Table structure for table `category_list`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%category_list` (
+CREATE TABLE IF NOT EXISTS `category_list` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `field` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%category_list` (
 -- Table structure for table `ci_sessions`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%ci_sessions` (
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
   `session_id` varchar(40) COLLATE utf8_bin NOT NULL DEFAULT '0',
   `ip_address` varchar(16) COLLATE utf8_bin NOT NULL DEFAULT '0',
   `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
@@ -105,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%ci_sessions` (
 -- Table structure for table `comments`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%comments` (
+CREATE TABLE IF NOT EXISTS `comments` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `user_id` int(25) NOT NULL,
   `pin_id` int(25) NOT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%comments` (
 -- Table structure for table `config`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%config` (
+CREATE TABLE IF NOT EXISTS `config` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `base_url` text COLLATE utf8_unicode_ci NOT NULL,
   `encryption_key` text COLLATE utf8_unicode_ci NOT NULL,
@@ -138,7 +138,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%config` (
 -- Table structure for table `email_settings`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%email_settings` (
+CREATE TABLE IF NOT EXISTS `email_settings` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `email` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `all` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
@@ -159,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%email_settings` (
 -- Table structure for table `follow`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%follow` (
+CREATE TABLE IF NOT EXISTS `follow` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `user_id` int(25) NOT NULL,
   `is_following` int(25) NOT NULL,
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%follow` (
 -- Table structure for table `friends_list`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%friends_list` (
+CREATE TABLE IF NOT EXISTS `friends_list` (
   `user_id` int(25) NOT NULL,
   `friend_id` int(25) NOT NULL,
   `connect_by` varchar(25) NOT NULL
@@ -186,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%friends_list` (
 -- Table structure for table `gift`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%gift` (
+CREATE TABLE IF NOT EXISTS `gift` (
   `pin_id` int(25) NOT NULL,
   `user_id` int(25) NOT NULL,
   `price` int(25) NOT NULL
@@ -198,7 +198,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%gift` (
 -- Table structure for table `likes`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%likes` (
+CREATE TABLE IF NOT EXISTS `likes` (
   `pin_id` int(25) NOT NULL,
   `source_user_id` int(25) NOT NULL,
   `like_user_id` int(25) NOT NULL
@@ -211,7 +211,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%likes` (
 -- Table structure for table `login_attempts`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%login_attempts` (
+CREATE TABLE IF NOT EXISTS `login_attempts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `ip_address` varchar(40) COLLATE utf8_bin NOT NULL,
   `login` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -225,7 +225,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%login_attempts` (
 -- Table structure for table `pins`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%pins` (
+CREATE TABLE IF NOT EXISTS `pins` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `user_id` int(25) NOT NULL,
   `board_id` int(25) NOT NULL,
@@ -245,7 +245,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%pins` (
 -- Table structure for table `repin`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%repin` (
+CREATE TABLE IF NOT EXISTS `repin` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `repin_user_id` int(25) NOT NULL,
   `owner_user_id` int(25) NOT NULL,
@@ -261,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%repin` (
 -- Table structure for table `report_pins`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%report_pins` (
+CREATE TABLE IF NOT EXISTS `report_pins` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `pin_id` int(25) NOT NULL,
   `board_id` int(25) NOT NULL,
@@ -276,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%report_pins` (
 -- Table structure for table `user`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%user` (
+CREATE TABLE IF NOT EXISTS `user` (
   `id` int(25) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `first_name` varchar(50) NOT NULL,
@@ -307,7 +307,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%user` (
 -- Table structure for table `users`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(50) COLLATE utf8_bin NOT NULL,
   `password` text COLLATE utf8_bin NOT NULL,
@@ -332,7 +332,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%users` (
 -- Table structure for table `user_autologin`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%user_autologin` (
+CREATE TABLE IF NOT EXISTS `user_autologin` (
   `key_id` char(32) COLLATE utf8_bin NOT NULL,
   `user_id` int(11) NOT NULL DEFAULT '0',
   `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
@@ -347,7 +347,7 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%user_autologin` (
 -- Table structure for table `user_profiles`
 --
 
-CREATE TABLE IF NOT EXISTS `%PREFIX%user_profiles` (
+CREATE TABLE IF NOT EXISTS `user_profiles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `country` varchar(20) COLLATE utf8_bin DEFAULT NULL,

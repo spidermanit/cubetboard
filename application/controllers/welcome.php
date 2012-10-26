@@ -108,8 +108,13 @@ class Welcome extends CI_Controller {
             $row    = $query->result();
 
         }
-        $data['row'] = $row;
-        $data['title']  = 'Welcome';
+        
+        if(!empty($row))
+            	$data['row']            = $row;
+	    else
+		$data['row']            = false;
+            
+        $data['title']              = 'Welcome';
         //if a valid login
         if(($this->session->userdata('login_user_id')))
         {
@@ -118,9 +123,12 @@ class Welcome extends CI_Controller {
             $data                   = array('fb_data' => $fb_data);//facebook data
              $data['id']            = $this->session->userdata('login_user_id');//logged user id
             $data['userDetails']    = $userDetails = userDetails($data['id']);//logged user details from user id
-            $data['row'] = $row;
-            $data['offset'] = $nextOffset;
-            $this->load->view('welcome_test', $data);
+            if(!empty($row))
+            	$data['row']            = $row;
+	    else
+		$data['row']            = false;
+            $data['offset']         = $nextOffset;
+            $this->load->view('welcome', $data);
         }
         //if invalid entry in db , call logout function by passing a paramter to set the invalid login message
         else{
@@ -130,7 +138,7 @@ class Welcome extends CI_Controller {
                 $this->session->unset_userdata('noentry_message');
             }
              $data['offset'] = $nextOffset;
-            $this->load->view('welcome_test', $data);
+            $this->load->view('welcome', $data);
         }
     }
     /*

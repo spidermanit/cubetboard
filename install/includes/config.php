@@ -99,16 +99,8 @@ class Config {
 
             if (fwrite($extJsFileHandle, $ext_new_content)) {
 
-                if (fwrite($extControllerFileHandle, $extControllerContent)) {
+		return true;                
 
-                    if (fwrite($extViewFileHandle, $extViewContent)) {
-                        return true;
-                    } else {
-                        return false;
-                    }
-                } else {
-                    return false;
-                }
             } else {
                 return false;
             }

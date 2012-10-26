@@ -55,10 +55,10 @@ class Database {
 
             $dbQuery = file_get_contents('assets/sql/' . $sqlFileName);
             
-            $prefixedQuery  = str_replace('%PREFIX%', $post['db_prefix'], $dbQuery);
+//            $prefixedQuery  = str_replace('%PREFIX%', '', $dbQuery);
 
-            $con->multi_query($prefixedQuery);
-//            $con->multi_query($dbQuery);
+//            $con->multi_query($prefixedQuery);
+            $con->multi_query($dbQuery);
             
             $con->close();
 
@@ -81,7 +81,7 @@ class Database {
 
             sleep(10);
 
-            $query = "INSERT INTO `".$post['db_prefix']."admin_users` (username, password) VALUES 
+            $query = "INSERT INTO `admin_users` (username, password) VALUES 
             ('" . $post['admin_username'] . "', '" . md5($post['admin_pass']) . "')";
 
             $con->query($query);

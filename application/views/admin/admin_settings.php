@@ -112,7 +112,7 @@ function validateSettings(id)
         return false;
     }
 
-    val ='id='+id+'&encryption_key='+encryption_key+'&admin_email='+admin_email+'&need_invite='+need_invite+'&facebook_app_id='+facebook_app_id+'&facebook_app_key='+facebook_app_key+'&facebook_app_secret='+facebook_app_secret+'&tweet_consumer_key='+tweet_consumer_key+'&tweet_consumer_secret='+tweet_consumer_secret;
+    val ='id='+id+'&encryption_key='+encryption_key+'&admin_email='+admin_email+'&need_invite='+need_invite+'&facebook_app_id='+facebook_app_id+'&facebook_app_key='+facebook_app_key+'&facebook_app_secret='+facebook_app_secret+'&tweet_consumer_key='+tweet_consumer_key+'&tweet_consumer_secret='+tweet_consumer_secret+'&base_url='+base_url;
     $('#settings_submit').hide();
     $('#process_action').show();
     $('#loading').show();
