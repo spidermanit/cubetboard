@@ -1,0 +1,216 @@
+/* 
+    Document   : style
+    Created on : 10 Oct, 2012, 3:57:50 PM
+    Author     : dev001
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+
+body {
+    font-size:80%;
+    margin:0 0 20px 0;
+    padding:0;
+    font:normal 11px Arial;
+    text-align:center;
+    color:#3D4343;
+    /*background:url("../images/paper.jpg") repeat;*/
+}
+
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.clearfix {
+    display: block;
+}
+
+/*input, label {
+    display: block;
+    font-size: 15px;
+    margin: 0;
+    padding: 5px;
+    border-radius:10px;
+}*/
+.disp {
+    display: block;
+    font-size: 15px;
+    margin: 0;
+    padding: 5px;
+    /*border-radius:10px;*/
+}
+#checkbox {
+    font-sixe: 15px;
+    margin: 0;
+    padding: 5px;
+}
+label {
+    margin-top: 20px;
+}
+input.input_text {
+    width: 270px;
+}
+input#submit {
+    margin: 25px auto 0;
+    font-size: 15px;
+}
+fieldset {
+    padding: 15px;
+    /*border-radius:10px;*/
+}
+legend {
+    font-size: 18px;
+    font-weight: bold;
+}
+.error {
+    background: #ffd1d1;
+    border: 1px solid #ff5858;
+    padding: 4px;
+    font-size:15px;
+}
+.hint {
+    /*color:#FF5858;*/
+    color:#848484;
+    font-size:13px;
+}
+
+
+.login_table {
+    display: block;
+    float: left;
+    margin-left: 77px;
+    margin-top: 15px;
+    width: 600px;
+}
+
+.login_wrapper{
+    float: left;
+    margin-left: 250px;
+    
+}
+#Content_Wrapper {
+	float:right;
+	width:750px;
+}
+#Content_Wrapper textarea
+{
+resize:none;
+}
+
+.Box_Head_login {
+    background: none repeat scroll 0 0 #17A8E4;
+    padding: 10px;
+}
+.Box_login {
+    border: 1px solid #17A8E4;
+}
+.Box_login .Box_Content_login{
+    overflow: hidden;
+    padding: 20px 15px;
+    width: 758px;
+}
+
+.login_holder{
+    float: left;
+    margin-top: 30px;
+
+}
+
+#Header {
+	/*moz-box-shadow: 0px 3px 2px #B2ACA2;  Firefox */
+  /*-webkit-box-shadow: 0px 3px 2px #B2ACA2;  Safari, Chrome */
+  box-shadow:0px 6px 2px #B2ACA2; /* CSS3 */
+  text-align:left;
+}
+
+#Header .head_inner {
+	width:989px;
+	margin:0 auto;
+
+}
+#Header .head_inner h1 {
+	text-shadow: 1px 1px #FFFFFF;
+}
+#Header .head_top {
+/*	background:url(images/head-top-bg.gif) repeat-x;*/
+    background-color: #17a8e4;
+	min-height:39px;
+	padding:10px 0 0 0;
+}
+#Header .head_bttm {
+	background:url(images/header-bttm-bg.gif) repeat-x center top;
+	padding:26px 0;
+}
+#Header img {
+	height:90px;
+	width:128px;
+}
+
+
+#Navigation {
+	position: relative;
+	float: right;
+	z-index: 105;
+}
+ul#Navigation li {
+    position: relative;
+	float:left;
+	margin:0 10px 0 0;
+}
+ul#Navigation li li {
+	float:none;
+	margin:0px;
+}
+ul#Navigation li li a {
+	display:block;
+	padding:5px 10px;
+}
+ul#Navigation li li.divider a
+{
+border-top:1px solid #DCDCDC;
+padding-top:5px;
+}
+ul#Navigation li li a:hover {
+	text-decoration:none;
+	box-shadow:0 0 5px 0 #847A69 inset;
+}
+ul#Navigation ul {
+    left: 3px;
+    top: 29px;
+    z-index: 105;
+}
+ul#Navigation ul {
+    background-color: #F4F4F4;
+    border-top: 1px solid #CCCACA;
+    box-shadow: 0 2px 4px rgba(34, 25, 25, 0.5);
+    display: none;
+    position: absolute;
+	text-align:left;
+    width: 140px;
+}
+ul#Navigation li:hover ul {
+    display: block;
+}
+#Navigation li#UserNav .head_user_nav img {
+	margin:0 0px 0 0;
+	position:absolute;
+	top:5px;
+	left:10px;
+	width:23px;
+	vertical-align:top;
+	height:20px;
+}
+#Navigation li#UserNav .head_user_nav {
+	position:relative;
+	padding: 0 10px 0 35px;
+}
+#Navigation li#UserNav .head_user_nav span {
+	padding:0 10px 0 30px;
+}
