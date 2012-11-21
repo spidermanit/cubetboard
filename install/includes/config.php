@@ -88,6 +88,7 @@ class Config {
         $extJsFileHandle = fopen($extJsAppPath, 'w+');
 //        $extControllerFileHandle = fopen($extControllerAppPath, 'w+');
 //        $extViewFileHandle = fopen($extViewAppPath, 'w+');
+        
 
 //        @chmod($extJsAppPath, 0777);
 //        @chmod($extControllerAppPath, 0777);
