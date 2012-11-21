@@ -39,7 +39,7 @@ class Config {
         $db_new_content = str_replace("%USERNAME%", $post['db_user'], $db_new_content);
         $db_new_content = str_replace("%PASSWORD%", $post['db_password'], $db_new_content);
         $db_new_content = str_replace("%DATABASE%", $post['db_name'], $db_new_content);
-        $db_new_content = str_replace("%PREFIX%", $post['db_prefix'], $db_new_content);
+        
 
         $config_new_content = str_replace("%BASEURL%", $post['base_url'], $config_file_contents);
 
@@ -72,30 +72,29 @@ class Config {
         $extTemplateJsPath = 'config_templates/extractor.js';
         $extJsAppPath = "../application/scripts/extractor.js";
 
-        $extTemplateControllerPath = 'config_templates/extractor.php';
-        $extControllerAppPath = "../application/controllers/extractor.php";
+//        $extTemplateControllerPath = 'config_templates/extractor.php';
+//        $extControllerAppPath = "../application/controllers/extractor.php";
 
-        $extTemplateViewPath = 'config_templates/extractor_view.php';
-        $extViewAppPath = "../application/views/extractor_view.php";
+//        $extTemplateViewPath = 'config_templates/extractor_view.php';
+//        $extViewAppPath = "../application/views/extractor_view.php";
 
         $extractionJsContent = file_get_contents($extTemplateJsPath);
-        $extControllerContent = file_get_contents($extTemplateControllerPath);
-        $extViewContent = file_get_contents($extTemplateViewPath);
+//        $extControllerContent = file_get_contents($extTemplateControllerPath);
+//        $extViewContent = file_get_contents($extTemplateViewPath);
 
         $ext_new_content = str_replace("%BASEURL%", $baseUrl, $extractionJsContent);
 
 
         $extJsFileHandle = fopen($extJsAppPath, 'w+');
-        $extControllerFileHandle = fopen($extControllerAppPath, 'w+');
-        $extViewFileHandle = fopen($extViewAppPath, 'w+');
+//        $extControllerFileHandle = fopen($extControllerAppPath, 'w+');
+//        $extViewFileHandle = fopen($extViewAppPath, 'w+');
 
 //        @chmod($extJsAppPath, 0777);
 //        @chmod($extControllerAppPath, 0777);
 //        @chmod($extViewAppPath, 0777);
 
 
-        if (is_writable($extJsAppPath) && is_writable($extControllerAppPath) &&
-                is_writable($extViewAppPath)) {
+        if (is_writable($extJsAppPath)) {
 
             if (fwrite($extJsFileHandle, $ext_new_content)) {
 
